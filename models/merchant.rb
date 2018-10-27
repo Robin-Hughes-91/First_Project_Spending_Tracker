@@ -3,7 +3,8 @@ require_relative( '../db/sql_runner' )
 
 class Merchant
 
-  attr_reader( :merchant_name, :merchant_logo, :id )
+  attr_reader(:id)
+  attr_accessor( :merchant_name, :merchant_logo, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -27,6 +28,43 @@ class Merchant
     @id = results.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM merchants"
+    results = SqlRunner.run( sql )
+    return results.map { |hash| Merchant.new( hash ) }
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM merchants
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Merchant.new( results.first )
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM merchants"
+    SqlRunner.run( sql )
+  end
+
+  def self.destroy(id)
+    sql = "DELETE FROM merchants
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
+  def update()
+    sql = "UPDATE merchants SET (merchant_name, merchant_logo) = ($1, $2) WHERE id = $3"
+    values = [@merchant_name, @merchant_logo, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM merchants where id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
 
 
@@ -35,4 +73,5 @@ class Merchant
 
 
 
-end 
+
+end
