@@ -79,7 +79,7 @@ class Tag
     values = [@id]
     merchant = SqlRunner.run(sql, values)
     result = merchant.map {|merchant| Merchant.new(merchant)}
-    return result.first
+    return result
   end
 
 

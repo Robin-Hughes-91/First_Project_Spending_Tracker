@@ -12,3 +12,8 @@ get '/tags/:id' do
   @tag = Tag.find(params['id'].to_i)
   erb(:"tags/show")
 end
+
+post '/tags/:id/delete' do
+  Tag.destroy(params[:id])
+  redirect to("/tags")
+end

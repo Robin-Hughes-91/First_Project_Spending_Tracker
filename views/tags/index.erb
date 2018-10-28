@@ -11,6 +11,11 @@
     <td><a href="/tags/<%= tag.id %>"><%= tag.tag_name %></a></td>
     <td>|</td>
     <td><%= tag.tag_logo %></td>
+    <td>
+      <form action="/tags/<%= tag.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </td>
   </tr>
   <% end %>
 </table>

@@ -11,6 +11,11 @@
     <td><a href="/merchants/<%= merchant.id %>"><%= merchant.merchant_name %></a></td>
     <td>|</td>
     <td><%= merchant.merchant_logo %></td>
+    <td>
+      <form action="/merchants/<%= merchant.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </td>
   </tr>
   <% end %>
 </table>

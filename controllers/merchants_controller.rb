@@ -12,3 +12,8 @@ get '/merchants/:id' do
   @merchant = Merchant.find(params['id'].to_i)
   erb(:"merchants/show")
 end
+
+post '/merchants/:id/delete' do
+  Merchant.destroy(params[:id])
+  redirect to("/merchants")
+end
