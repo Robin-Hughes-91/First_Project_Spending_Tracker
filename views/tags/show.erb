@@ -1,0 +1,10 @@
+<h1><%= @tag.tag_name %> (tag)</h1>
+
+
+<h3>Tag:</h3>
+
+<ul>
+  <% @tag.merchant.each do |merchant| %>
+  <li><%= merchant.name %></li>
+  <% end %>
+</ul>

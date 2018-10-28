@@ -1,0 +1,18 @@
+<h1>Transactions</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/transactions/new">New Transaction</a>
+</p>
+
+<ul>
+  <% for transaction in @transactions %>
+  <li>
+  <p><%= transaction.merchants.merchant_name %> <%= transaction.tags.tag_name %> <%= transaction.transaction_value %> </p>
+    <p>
+      <form action="/transactions/<%= transaction.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  <% end %>
+</ul>

@@ -29,10 +29,16 @@ class Tag
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE tags SET (tag_name, tag_logo) = ($1, $2) WHERE id = $3"
+    values = [@tag_name, @tag_logo, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.all()
     sql = "SELECT * FROM tags"
     results = SqlRunner.run( sql )
-    return results.map { |hash| Tags.new( hash ) }
+    return results.map { |hash| Tag.new( hash ) }
   end
 
   def self.find( id )
@@ -40,7 +46,7 @@ class Tag
     WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
-    return Tags.new( results.first )
+    return Tag.new( results.first )
   end
 
   def self.delete_all
@@ -55,11 +61,6 @@ class Tag
     SqlRunner.run( sql, values )
   end
 
-  def update()
-    sql = "UPDATE tags SET (tag_name, tag_logo) = ($1, $2) WHERE id = $3"
-    values = [@tag_name, @tag_logo, @id]
-    SqlRunner.run(sql, values)
-  end
 
   def delete()
     sql = "DELETE FROM tags where id = $1"

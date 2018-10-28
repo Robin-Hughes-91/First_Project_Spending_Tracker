@@ -1,12 +1,13 @@
 
+require_relative( "../models/transaction.rb" )
 require_relative( "../models/merchant.rb" )
 require_relative( "../models/tag.rb" )
-require_relative( "../models/transaction.rb" )
 require("pry-byebug")
 
+
+Transaction.delete_all()
 Tag.delete_all()
 Merchant.delete_all()
-Transaction.delete_all()
 
 
 #TAGS table data -----
