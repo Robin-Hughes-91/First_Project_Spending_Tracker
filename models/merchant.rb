@@ -34,7 +34,7 @@ class Merchant
     values = [@merchant_name, @merchant_logo, @id]
     SqlRunner.run(sql, values)
   end
-  
+
   def self.all()
     sql = "SELECT * FROM merchants"
     results = SqlRunner.run( sql )
@@ -70,17 +70,17 @@ class Merchant
 
   #ADDITIONAL FUNCTIONS
 
-  # def find_tags_for_each_merchant()
-  #   sql = "SELECT tags.*
-  #   FROM tags
-  #   INNER JOIN transactions
-  #   ON transactions.tags_id = tag.id
-  #   WHERE merchant_id = $1"
-  #   values = [@id]
-  #   tags = SqlRunner.run(sql, values)
-  #   result = tags.map {|tag| Tag.new(tag)}
-  #   return result
-  # end
+  def tag()
+    sql = "SELECT tags.*
+    FROM tags
+    INNER JOIN transactions
+    ON transactions.tags_id = tags.id
+    WHERE merchants_id = $1"
+    values = [@id]
+    tags = SqlRunner.run(sql, values)
+    result = tags.map {|tag| Tag.new(tag)}
+    return result.first
+  end
 
 
 
