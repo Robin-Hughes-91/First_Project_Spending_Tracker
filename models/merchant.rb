@@ -12,6 +12,7 @@ class Merchant
     @merchant_logo = options['merchant_logo']
   end
 
+  #CRUD FUNCTIONS
   def save()
     sql = "INSERT INTO merchants
     (
@@ -65,6 +66,9 @@ class Merchant
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
+  #ADDITIONAL FUNCTIONS
+  
 
 
 

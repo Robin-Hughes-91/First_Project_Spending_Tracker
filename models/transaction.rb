@@ -13,6 +13,7 @@ class Transaction
     @transaction_value = options['transaction_value'].to_i
   end
 
+#CRUD FUNCTIONS
   def save()
     sql = "INSERT INTO transactions
     (
@@ -66,6 +67,24 @@ class Transaction
     sql = "DELETE FROM transactions where id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  # ADDITIONAL FUNCTIONS
+
+  def tag()
+  sql = "SELECT * FROM tags
+  WHERE id = $1"
+  values = [@tags_id]
+  results = SqlRunner.run( sql, values )
+  return Tag.new( results.first )
+  end
+
+  def merchant()
+  sql = "SELECT * FROM merchants
+  WHERE id = $1"
+  values = [@merchants_id]
+  results = SqlRunner.run( sql, values )
+  return Merchant.new( results.first )
   end
 
 

@@ -12,6 +12,7 @@ class Tag
     @tag_logo = options['tag_logo']
   end
 
+  #CRUD FUNCTIONS
   def save()
     sql = "INSERT INTO tags
     (
