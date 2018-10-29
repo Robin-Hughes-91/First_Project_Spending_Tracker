@@ -3,8 +3,4 @@
 
 <h3>Spending for this Tag:</h3>
 
-<ul>
-  <% @tag.merchant.each do |merchant| %>
-  <li><%= merchant.merchant_name %></li>
-  <% end %>
-</ul>
+<p>Total: £<%= @tag.transaction_total %></p>

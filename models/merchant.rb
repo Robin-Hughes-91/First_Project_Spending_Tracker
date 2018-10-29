@@ -4,7 +4,7 @@ require_relative( '../db/sql_runner' )
 class Merchant
 
   attr_reader(:id)
-  attr_accessor( :merchant_name, :merchant_logo, :id )
+  attr_accessor( :merchant_name, :merchant_logo, :id)
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -18,6 +18,7 @@ class Merchant
     (
       merchant_name,
       merchant_logo
+
     )
     VALUES
     (
@@ -79,7 +80,26 @@ class Merchant
     values = [@id]
     tags = SqlRunner.run(sql, values)
     result = tags.map {|tag| Tag.new(tag)}
-    return result
+    return result.first
+  end
+
+  def transactions()
+  sql = "SELECT * FROM transactions WHERE merchants_id = $1"
+  values = [@id]
+  transaction = SqlRunner.run( sql, values )
+  result = transaction.map{ |transaction| Transaction.new(transaction)}
+  return result
+  end
+
+  def transaction_total
+
+  sql = "SELECT * FROM transactions WHERE merchants_id = $1"
+  values = [@id]
+  transaction = SqlRunner.run( sql, values )
+  result = transaction.map{ |transaction| Transaction.new(transaction)}
+  total = result.map{|transaction| transaction.transaction_value}
+  combined_total = total.sum
+  return combined_total
   end
 
 

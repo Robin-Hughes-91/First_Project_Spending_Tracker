@@ -1,18 +1,23 @@
 <h1>Tags</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/tags/new">New Tag</a>
+</p>
+
 <h3>Select a tag to view transactions for the tag</h3>
 
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Tag Name</th>
     <th></th>
-    <th>Logo</th>
+    <th></th>
   </tr>
   <% for tag in @tag %>
   <tr>
     <td><a href="/tags/<%= tag.id %>"><%= tag.tag_name %></a></td>
     <td>|</td>
-    <td><%= tag.tag_logo %></td>
+    <td><img width="20" height="20" src= <%= tag.tag_logo %></td>
     <td>
       <form action="/tags/<%= tag.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />

@@ -1,6 +1,7 @@
 DROP TABLE transactions;
-DROP TABLE tags;
 DROP TABLE merchants;
+DROP TABLE tags;
+
 
 CREATE TABLE tags
 (

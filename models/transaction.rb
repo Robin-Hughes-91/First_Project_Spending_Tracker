@@ -71,21 +71,7 @@ class Transaction
 
   # ADDITIONAL FUNCTIONS
 
-  # def tags()
-  # sql = "SELECT * FROM tags
-  # WHERE id = $1"
-  # values = [@tags_id]
-  # results = SqlRunner.run( sql, values )
-  # return Tag.new( results.first )
-  # end
-  #
-  # def merchants()
-  # sql = "SELECT * FROM merchants
-  # WHERE id = $1"
-  # values = [@merchants_id]
-  # results = SqlRunner.run( sql, values )
-  # return Merchant.new( results.first )
-  # end
+
 
   def tags()
   sql = "SELECT * FROM tags WHERE tags.id = $1"
@@ -105,9 +91,9 @@ class Transaction
 
   def self.transaction_total
   transactions = self.all()
-  film_fees = transactions.map{|transaction| transaction.transaction_value}
-  combined_fees = film_fees.sum
-  return combined_fees
+  total = transactions.map{|transaction| transaction.transaction_value}
+  combined_total = total.sum
+  return combined_total
   end
 
 

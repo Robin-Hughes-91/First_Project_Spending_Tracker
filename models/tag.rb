@@ -79,7 +79,26 @@ class Tag
     values = [@id]
     merchant = SqlRunner.run(sql, values)
     result = merchant.map {|merchant| Merchant.new(merchant)}
+    return result.first
+  end
+
+  def transactions()
+    sql = "SELECT * FROM transactions WHERE tags_id = $1"
+    values = [@id]
+    transaction = SqlRunner.run( sql, values )
+    result = transaction.map{ |transaction| Transaction.new(transaction)}
     return result
+  end
+
+  def transaction_total
+
+    sql = "SELECT * FROM transactions WHERE tags_id = $1"
+    values = [@id]
+    transaction = SqlRunner.run( sql, values )
+    result = transaction.map{ |transaction| Transaction.new(transaction)}
+    total = result.map{|transaction| transaction.transaction_value}
+    combined_total = total.sum
+    return combined_total
   end
 
 
