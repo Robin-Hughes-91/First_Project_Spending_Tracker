@@ -1,32 +1,32 @@
 body {
-  background: black url('/images/background.jpg');
+  background: #2A5B77;
   background-size: 100%;
   background-repeat: no-repeat;
-  color: papayawhip;
-  font-family: 'Merriweather', serif;
+  color: #FD85A5
+;
+  font-family: 'Baloo Bhaina', cursive;
   padding: 0px;
   margin: 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Baloo Bhaina', cursive;
   margin: 0px;
   padding: 0px;
 }
 
 h1 {
   font-size: 1.8em;
-  color: darkred;
+  color: #FD85A5;
   margin-bottom: 20px;
 }
 
 a, a:link, a:visited {
-  color: #a2937e;
+  color: #FD85A5;
   text-decoration: none;
 }
 
 a:hover, a:active, a:focus {
-  color: #c6e2ff;
 }
 
 nav {
@@ -38,6 +38,7 @@ nav {
 nav ul li {
   margin-bottom: 15px;
   text-transform: uppercase;
+
 }
 
 ul {
@@ -50,6 +51,12 @@ main {
   padding: 25px;
 }
 
+p {
+  font-size: 1.1em;
+
+
+}
+
 .flex {
   display: flex;
 }
@@ -59,6 +66,7 @@ main {
 }
 
 #content {
-  border-left: 1px solid darkred;
+  border-left: 1px solid blue;
   padding-left: 25px;
+  border-left: dotted;
 }

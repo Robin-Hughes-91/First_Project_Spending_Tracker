@@ -1,7 +1,14 @@
 input[type="submit"] {
   text-transform: uppercase;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Baloo Bhaina', cursive;
+  margin: 10px;
 }
+
+input[type="number"] {
+  font-family: 'Baloo Bhaina', cursive;
+  margin: 10px;
+}
+
 
 select {
  width: 150px;
@@ -10,10 +17,12 @@ select {
  font-size: 0.8em;
  -webkit-appearance: none;
  background: url('/images/hazard.png') 96% / 15% no-repeat papayawhip;
- font-family: 'Merriweather', serif;
- border: 1px solid #eee;
- display: block;
-} 
+ font-family: 'Baloo Bhaina', cursive;
+ border: 5px solid #eee;
+ display:inline-block;
+ margin: 10px;
+
+}
 
 :focus {
   outline-color: transparent;

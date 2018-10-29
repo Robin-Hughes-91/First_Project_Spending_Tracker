@@ -2,25 +2,41 @@
   border:0px none;
   border-radius: 3%;
   padding: 8px 12px;
-  color: papayawhip;
+  color: #FD85A5;
   cursor:pointer;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Baloo Bhaina', cursive;
+  transition: top ease 0.5s;
+  display: inline-block;
+
 }
 
 .btn--danger {
-  background-color: darkred;
+  background-color: #2A5B77;
+  outline: dotted;
+
+
+
 }
 
 .btn--danger:hover {
-  background-color: #730000;
+  outline: dotted;
+  margin-left: -5px;
+
+
+
 }
 
 .btn--action:hover {
-  background-color: #495C27;
+  outline: dotted;
+  margin: -5px;
+
 }
 
 .btn--action {
-  background-color: darkolivegreen;
+  outline: dotted;
+  background-color: #2A5B77;
+
+
 }
 
 .btn--wrapper {
