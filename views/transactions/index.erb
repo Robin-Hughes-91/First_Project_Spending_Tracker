@@ -4,20 +4,28 @@
   <a class="btn btn--action" href="/transactions/new">New Transaction</a>
 </p>
 
-<ul>
-  <% for transaction in @transactions %>
-  <li>
-  <p><%= transaction.merchants.merchant_name %> - <%= transaction.tags.tag_name %>: £<%= transaction.transaction_value %> </p>
-    <p>
-      <form action="/transactions/<%= transaction.id %>/delete" method="POST">
+<% for transaction in @transactions %>
+
+
+
+<div class="div1">
+
+      <form class = "div1"action="/transactions/<%= transaction.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
       </form>
-    </p>
-  </li>
-  <% end %>
 
-  <h2>Transaction Total: £<%= Transaction.transaction_total %></h2>
+</div>
+
+<div class="parent">
+  <p><%= transaction.merchants.merchant_name %> - <%= transaction.tags.tag_name %>: £<%= transaction.transaction_value %> </p>
+</div>
+
+<% end %>
 
 
 
-</ul>
+
+
+
+
+<h2>Transaction Total: £<%= Transaction.transaction_total %></h2>

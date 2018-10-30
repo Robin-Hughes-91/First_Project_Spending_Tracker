@@ -1,0 +1,21 @@
+<h1>Edit Tag</h1>
+
+<form action="/merchants/<%=@merchant.id%>" method="post">
+
+
+  <label for="Merchant-name-field">Tag Name:</label>
+  <input
+  type="text"
+  name="merchant_name"
+  id="Merchant-name-field"
+  value="<%= @merchant.merchant_name %>"
+  />
+  <input
+  type="text"
+  name="merchant_logo"
+  id="Merchant-logo-field"
+  value="<%= @merchant.merchant_logo %>"
+  />
+
+  <input class="btn btn--action" type='submit' value="submit">
+</form>

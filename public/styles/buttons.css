@@ -20,7 +20,7 @@
 .btn--danger {
   background-color: #2A5B77;
   outline: dotted;
-  margin-bottom: 100px;
+  margin-bottom: 300px;
   margin-left: 100px;
   float:right;
 
@@ -33,7 +33,7 @@
 
 .btn--danger:hover {
   outline: dotted;
-  margin-right: -1px;
+  margin-right: +8px;
 
 
 
@@ -41,8 +41,9 @@
 
 .btn--action:hover {
   outline: dotted;
-
+  margin-left: +97px;
 }
+
 
 .btn--action {
   outline: dotted;

@@ -17,11 +17,16 @@
   <tr>
     <td><a href="/tags/<%= tag.id %>"><%= tag.tag_name %></a></td>
     <td>|</td>
-    <td><img width="20" height="20" src= <%= tag.tag_logo %></td>
+    <td><img width="30" height="30" src= <%= tag.tag_logo %> > </td>
     <td>
       <form action="/tags/<%= tag.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
       </form>
+    </td>
+    <td>
+      <a href = "/tags/<%= tag.id %>/update">
+        <input class="btn btn--danger" type="submit" value="update" />
+      </a>
     </td>
   </tr>
   <% end %>

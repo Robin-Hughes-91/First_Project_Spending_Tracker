@@ -1,0 +1,21 @@
+<h1>New Tag</h1>
+
+<form action="/tags/<%=@tag.id%>" method="post">
+
+
+  <label for="Tag-name-field">Tag Name:</label>
+  <input
+  type="text"
+  name="tag_name"
+  id="Tag-name-field"
+  value="<%= @tag.tag_name %>"
+  />
+  <input
+  type="text"
+  name="tag_logo"
+  id="Tag-logo-field"
+  value="<%= @tag.tag_logo %>"
+  />
+
+  <input class="btn btn--action" type='submit' value="submit">
+</form>

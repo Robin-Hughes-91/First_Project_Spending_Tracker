@@ -82,13 +82,13 @@ class Tag
     return result.first
   end
 
-  def transactions()
-    sql = "SELECT * FROM transactions WHERE tags_id = $1"
-    values = [@id]
-    transaction = SqlRunner.run( sql, values )
-    result = transaction.map{ |transaction| Transaction.new(transaction)}
-    return result
-  end
+  # def transactions()
+  #   sql = "SELECT * FROM transactions WHERE tags_id = $1"
+  #   values = [@id]
+  #   transaction = SqlRunner.run( sql, values )
+  #   result = transaction.map{ |transaction| Transaction.new(transaction)}
+  #   return result
+  # end
 
   def transaction_total
 
@@ -100,6 +100,8 @@ class Tag
     combined_total = total.sum
     return combined_total
   end
+
+
 
 
 

@@ -8,17 +8,22 @@
   <tr>
     <th>Name</th>
     <th></th>
-    <th>Logo</th>
+    <th></th>
   </tr>
   <% for merchant in @merchant %>
   <tr>
     <td><a href="/merchants/<%= merchant.id %>"><%= merchant.merchant_name %></a></td>
     <td>|</td>
-    <td><img width="20" height="20" src= <%= merchant.merchant_logo %></td>
+    <td><img width="40" height="20" src= <%= merchant.merchant_logo %> ></td>
     <td>
       <form action="/merchants/<%= merchant.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
       </form>
+    </td>
+    <td>
+      <a href = "/merchants/<%= merchant.id %>/update">
+        <input class="btn btn--danger" type="submit" value="update" />
+      </a>
     </td>
   </tr>
   <% end %>
