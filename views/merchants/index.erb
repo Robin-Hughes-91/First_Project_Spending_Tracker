@@ -4,6 +4,8 @@
   <a class="btn btn--action" href="/merchants/new">New Tag</a>
 </p>
 
+<h3>Select a merchant to view spending for the merchant</h3>
+
 <table>
   <tr>
     <th>Name</th>
@@ -14,7 +16,7 @@
   <tr>
     <td><a href="/merchants/<%= merchant.id %>"><%= merchant.merchant_name %></a></td>
     <td>|</td>
-    <td><img width="40" height="20" src= <%= merchant.merchant_logo %> ></td>
+    <td><img width="60" height="20" src= <%= merchant.merchant_logo %> ></td>
     <td>
       <form action="/merchants/<%= merchant.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />

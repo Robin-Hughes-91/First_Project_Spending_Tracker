@@ -19,12 +19,14 @@ h1 {
   font-size: 4em;
   color: #FD85A5;
   margin-bottom: 10px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+
 }
 
 h2 {
   font-size: 2em;
   color: #FD85A5;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 a, a:link, a:visited {

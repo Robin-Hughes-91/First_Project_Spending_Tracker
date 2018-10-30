@@ -20,8 +20,6 @@
 .btn--danger {
   background-color: #2A5B77;
   outline: dotted;
-  margin-bottom: 300px;
-  margin-left: 100px;
   float:right;
 
 
@@ -41,16 +39,23 @@
 
 .btn--action:hover {
   outline: dotted;
-  margin-left: +97px;
+  margin-left: +103px;
+}
+
+.btn--update:hover {
+  outline: dotted;
+  margin-left: +13px;
+}
+
+.btn--update {
+  outline: dotted;
+  background-color: #2A5B77;
 }
 
 
 .btn--action {
   outline: dotted;
   background-color: #2A5B77;
-
-
-
 }
 
 .btn--wrapper {

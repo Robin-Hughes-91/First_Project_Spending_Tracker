@@ -14,28 +14,33 @@ Merchant.delete_all()
 
 tag1 = Tag.new({
   "tag_name" => "Food",
-  "tag_logo" => "url link"
+  "tag_logo" => "https://mbtskoudsalg.com/images/food-clip-art-png-3.png"
 })
 tag1.save()
 
 tag2 = Tag.new({
   "tag_name" => "Clothing",
-  "tag_logo" => "url link"
+  "tag_logo" => "https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/e/ed/Clothing-clipart-nriLaoT84.png/revision/latest?cb=20160905020118"
 })
 tag2.save()
 
+tag3 = Tag.new({
+  "tag_name" => "Furniture",
+  "tag_logo" => "https://ubisafe.org/images/table-transparent-cartoon-3.png"
+})
+tag3.save()
 
 #MERCHANT table data -----
 
 merchant1 = Merchant.new({
   "merchant_name" => "Tesco",
-  "merchant_logo" => "url link"
+  "merchant_logo" => "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Tesco_Logo.svg/1280px-Tesco_Logo.svg.png"
 })
 merchant1.save()
 
 merchant2 = Merchant.new({
   "merchant_name" => "Amazon",
-  "merchant_logo" => "url link"
+  "merchant_logo" => "https://mbtskoudsalg.com/images/amazon-png-transparent-4.png"
 })
 merchant2.save()
 
