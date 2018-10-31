@@ -2,11 +2,13 @@ input[type="submit"] {
   text-transform: uppercase;
   font-family: 'Baloo Bhaina', cursive;
   margin: 10px;
+
 }
 
 input[type="number"] {
   font-family: 'Baloo Bhaina', cursive;
   margin: 10px;
+
 }
 
 
@@ -21,6 +23,7 @@ select {
  border: 5px solid #eee;
  display:inline-block;
  margin: 10px;
+
 
 }
 

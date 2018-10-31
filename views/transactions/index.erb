@@ -6,26 +6,28 @@
 </p>
 
 <h2> Your Spending so far:</h2>
-<h2> </h2>
+<h1>  </h1>
 
-
-<% for transaction in @transactions %>
-
-
-
-<div class="div1">
-
-      <form class = "div1"action="/transactions/<%= transaction.id %>/delete" method="POST">
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% for transaction in @transactions %>
+  <tr>
+    <td><img width="60" height="20" src= <%= transaction.merchants.merchant_logo %> > </td>
+    <td>|</td>
+    <td><a href="/tags/<%= transaction.tags.id %>"><%= transaction.tags.tag_name %></a></td>
+    <td><img width="40" height="30" src= <%= transaction.tags.tag_logo %> > </td>
+    <td>£ <%= transaction.transaction_value %></td>
+    <td><form class = "div1"action="/transactions/<%= transaction.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
       </form>
-
-</div>
-
-<div class="parent">
-  <p><%= transaction.merchants.merchant_name %> - <%= transaction.tags.tag_name %>: £<%= transaction.transaction_value %> </p>
-</div>
-
-<% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
 
 
 

@@ -13,13 +13,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Baloo Bhaina', cursive;
   margin: 0px;
   padding: 0px;
+  text-align: center;
+
+
 }
 
 h1 {
   font-size: 4em;
   color: #FD85A5;
   margin-bottom: 10px;
+  text-align: center;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+
 
 }
 
@@ -27,14 +32,19 @@ h2 {
   font-size: 2em;
   color: #FD85A5;
   margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 a, a:link, a:visited {
   color: #FD85A5;
   text-decoration: none;
+
 }
 
 a:hover, a:active, a:focus {
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+
+
 }
 
 nav {
@@ -61,6 +71,8 @@ main {
 
 p {
   font-size: 1.3em;
+  text-align: center;
+
 
 
 }

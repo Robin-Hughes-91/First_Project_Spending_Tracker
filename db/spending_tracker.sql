@@ -7,7 +7,8 @@ CREATE TABLE tags
 (
   id SERIAL8 primary key,
   tag_name VARCHAR(255),
-  tag_logo VARCHAR(255)
+  tag_logo VARCHAR(255),
+  tag_budget INT8
 );
 
 CREATE TABLE merchants

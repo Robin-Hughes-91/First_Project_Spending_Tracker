@@ -11,7 +11,7 @@
   transition: top ease 1s;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   display: inline;
-  margin-left: 100px;
+
 
 
 
@@ -32,6 +32,9 @@
 .btn--danger:hover {
   outline: dotted;
   margin-right: +8px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+
+
 
 
 
@@ -39,12 +42,16 @@
 
 .btn--action:hover {
   outline: dotted;
-  margin-left: +103px;
+  margin-left: +3;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+
 }
 
 .btn--update:hover {
   outline: dotted;
   margin-left: +13px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+
 }
 
 .btn--update {
@@ -56,6 +63,7 @@
 .btn--action {
   outline: dotted;
   background-color: #2A5B77;
+  margin-top: 100px;
 }
 
 .btn--wrapper {

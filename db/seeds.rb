@@ -14,21 +14,34 @@ Merchant.delete_all()
 
 tag1 = Tag.new({
   "tag_name" => "Food",
-  "tag_logo" => "https://mbtskoudsalg.com/images/food-clip-art-png-3.png"
+  "tag_logo" => "http://www.pngall.com/wp-content/uploads/2016/06/Lunch-Box-Free-Download-PNG.png",
+  "tag_budget" => 100
 })
 tag1.save()
 
 tag2 = Tag.new({
   "tag_name" => "Clothing",
-  "tag_logo" => "https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/e/ed/Clothing-clipart-nriLaoT84.png/revision/latest?cb=20160905020118"
+  "tag_logo" => "https://vignette.wikia.nocookie.net/animal-jam-clans-1/images/e/ed/Clothing-clipart-nriLaoT84.png/revision/latest?cb=20160905020118",
+  "tag_budget" => 50
+
 })
 tag2.save()
 
 tag3 = Tag.new({
   "tag_name" => "Furniture",
-  "tag_logo" => "https://ubisafe.org/images/table-transparent-cartoon-3.png"
+  "tag_logo" => "https://ubisafe.org/images/table-transparent-cartoon-3.png",
+  "tag_budget" => 150
+
 })
 tag3.save()
+
+tag4 = Tag.new({
+  "tag_name" => "Education",
+  "tag_logo" => "https://melbournechapter.net/images/transparent-symbols-education-2.png",
+  "tag_budget" => 6000
+
+})
+tag4.save()
 
 #MERCHANT table data -----
 
@@ -43,6 +56,12 @@ merchant2 = Merchant.new({
   "merchant_logo" => "https://mbtskoudsalg.com/images/amazon-png-transparent-4.png"
 })
 merchant2.save()
+
+merchant3 = Merchant.new({
+  "merchant_name" => "CodeClan",
+  "merchant_logo" => "https://i2.wp.com/codeclan.com/wp-content/uploads/2016/05/CodeClan-Horizontal-RGB.png?fit=869%2C320&ssl=1"
+})
+merchant3.save()
 
 
 #TRANSACTION table data -----
@@ -74,6 +93,13 @@ transaction4 = Transaction.new({
   "transaction_value" => 15
 })
 transaction4.save()
+
+transaction5 = Transaction.new({
+  "tags_id" => tag4.id,
+  "merchants_id" => merchant3.id,
+  "transaction_value" => 1500
+})
+transaction5.save()
 
 
 

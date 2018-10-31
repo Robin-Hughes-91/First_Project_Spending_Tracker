@@ -4,12 +4,13 @@ require_relative( '../db/sql_runner' )
 class Tag
 
   attr_reader(:id)
-  attr_accessor( :tag_name, :tag_logo)
+  attr_accessor( :tag_name, :tag_logo, :tag_budget)
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @tag_name = options['tag_name']
     @tag_logo = options['tag_logo']
+    @tag_budget = options['tag_budget'].to_i
   end
 
   #CRUD FUNCTIONS
@@ -17,21 +18,22 @@ class Tag
     sql = "INSERT INTO tags
     (
       tag_name,
-      tag_logo
+      tag_logo,
+      tag_budget
     )
     VALUES
     (
-      $1, $2
+      $1, $2, $3
     )
     RETURNING id"
-    values = [@tag_name, @tag_logo]
+    values = [@tag_name, @tag_logo, @tag_budget]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
-    sql = "UPDATE tags SET (tag_name, tag_logo) = ($1, $2) WHERE id = $3"
-    values = [@tag_name, @tag_logo, @id]
+    sql = "UPDATE tags SET (tag_name, tag_logo, tag_budget) = ($1, $2, $3) WHERE id = $4"
+    values = [@tag_name, @tag_logo, @tag_budget, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -82,16 +84,15 @@ class Tag
     return result.first
   end
 
-  # def transactions()
-  #   sql = "SELECT * FROM transactions WHERE tags_id = $1"
-  #   values = [@id]
-  #   transaction = SqlRunner.run( sql, values )
-  #   result = transaction.map{ |transaction| Transaction.new(transaction)}
-  #   return result
-  # end
+  def transactions()
+    sql = "SELECT * FROM transactions WHERE tags_id = $1"
+    values = [@id]
+    transaction = SqlRunner.run( sql, values )
+    result = transaction.map{ |transaction| Transaction.new(transaction)}
+    return result
+  end
 
   def transaction_total
-
     sql = "SELECT * FROM transactions WHERE tags_id = $1"
     values = [@id]
     transaction = SqlRunner.run( sql, values )
