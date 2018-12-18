@@ -8,7 +8,6 @@ Transaction.delete_all()
 Tag.delete_all()
 Merchant.delete_all()
 
-
 #TAGS table data -----
 
 tag1 = Tag.new({
@@ -99,5 +98,3 @@ transaction5 = Transaction.new({
   "transaction_value" => 1500
 })
 transaction5.save()
-
-nil
