@@ -21,6 +21,7 @@
     <td><img width="40" height="30" src= <%= transaction.tags.tag_logo %> > </td>
     <td>|</td>
     <td><img width="60" height="20" src= <%= transaction.merchants.merchant_logo %> > </td>
+    <td>|</td>
     <td>£ <%= transaction.transaction_value %></td>
     <td><form class = "div1"action="/transactions/<%= transaction.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
