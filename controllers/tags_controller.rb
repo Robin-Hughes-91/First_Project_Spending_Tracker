@@ -1,8 +1,6 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require( 'sinatra/contrib/all') if development?
 require_relative( '../models/tag.rb' )
-require ('pry')
-also_reload( '../models/*' )
 
 
 get '/tags' do
@@ -24,12 +22,6 @@ post '/tags/:id/delete' do
   redirect to("/tags")
 end
 
-post '/tags' do
-  @tag = Tag.new(params)
-  @tag.save
-  redirect to("/tags")
-end
-
 get '/tags/:id/update' do
   @tag = Tag.find( params[:id] )
   erb( :"tags/update" )
@@ -37,5 +29,11 @@ end
 
 post '/tags/:id' do
   Tag.new(params).update
+  redirect to("/tags")
+end
+
+post '/tags' do
+  @tag = Tag.new(params)
+  @tag.save
   redirect to("/tags")
 end

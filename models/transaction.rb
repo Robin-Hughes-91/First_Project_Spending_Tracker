@@ -97,8 +97,4 @@ class Transaction
   end
 
 
-
-
-
-
 end

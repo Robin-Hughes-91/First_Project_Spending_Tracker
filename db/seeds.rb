@@ -2,7 +2,6 @@
 require_relative( "../models/transaction.rb" )
 require_relative( "../models/merchant.rb" )
 require_relative( "../models/tag.rb" )
-require("pry-byebug")
 
 
 Transaction.delete_all()
@@ -100,13 +99,3 @@ transaction5 = Transaction.new({
   "transaction_value" => 1500
 })
 transaction5.save()
-
-
-
-
-
-
-
-
-binding.pry
-nil

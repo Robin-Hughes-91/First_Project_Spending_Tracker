@@ -1,8 +1,6 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require( 'sinatra/contrib/all') if development?
 require_relative( '../models/merchant.rb' )
-require ('pry')
-also_reload( '../models/*' )
 
 
 get '/merchants' do
