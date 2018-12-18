@@ -99,3 +99,5 @@ transaction5 = Transaction.new({
   "transaction_value" => 1500
 })
 transaction5.save()
+
+nil
