@@ -6,4 +6,4 @@
 <p>Total Spend: £<%= @tag.transaction_total %></p>
 <p>Budget: £<%= @tag.tag_budget %> </p>
 <p>Budget Left: £<%= @tag.tag_budget - @tag.transaction_total  %> </p>
-<p><%= if @tag.tag_budget - @tag.transaction_total <=0 then p "DANGER!!! BUDGET LIMIT REACHED!!!" end  %> </p>
+<p><%= if @tag.tag_budget - @tag.transaction_total <0 then p "DANGER!!! BUDGET LIMIT EXCEEDED!!!" end  %> </p>

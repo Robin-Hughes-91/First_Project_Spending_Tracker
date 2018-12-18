@@ -23,7 +23,6 @@
   <% for tag in @tag %>
   <tr>
     <td><a href="/tags/<%= tag.id %>"><%= tag.tag_name %></a></td>
-    <td>|</td>
     <td><img width="40" height="30" src= <%= tag.tag_logo %> > </td>
     <td>
       <form action="/tags/<%= tag.id %>/delete" method="POST">
